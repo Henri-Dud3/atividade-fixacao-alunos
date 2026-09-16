@@ -1,0 +1,6 @@
+/.runtime/
+/data/*.sqlite*
+/tests/*.sqlite*
+/output/qa/
+/output/qa_browser.cjs
+__pycache__/
