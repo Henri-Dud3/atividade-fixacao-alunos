@@ -7,3 +7,5 @@ RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available
     && mkdir -p /var/www/html/data \
     && chown -R www-data:www-data /var/www/html/data
 EXPOSE 80
+ENTRYPOINT ["sh", "/var/www/html/docker-entrypoint.sh"]
+CMD ["apache2-foreground"]
