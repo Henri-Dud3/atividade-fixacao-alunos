@@ -4,6 +4,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends libsqlite3-dev 
     && rm -rf /var/lib/apt/lists/*
 COPY . /var/www/html/
 RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available/000-default.conf \
+    && a2dismod mpm_event mpm_worker \
+    && a2enmod mpm_prefork \
     && mkdir -p /var/www/html/data \
     && chown -R www-data:www-data /var/www/html/data
 EXPOSE 80
