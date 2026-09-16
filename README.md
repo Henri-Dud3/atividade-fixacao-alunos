@@ -4,6 +4,8 @@ Sistema de cadastro de alunos e notas em HTML, CSS, JavaScript, PHP e SQL (SQLit
 
 Repositório: https://github.com/Henri-Dud3/atividade-fixacao-alunos
 
+Sistema online: https://nota-clara-production.up.railway.app
+
 ## Executar
 
 Requisito: PHP 8.1+ com a extensão `pdo_sqlite` habilitada.
@@ -42,7 +44,7 @@ Senhas são armazenadas como hashes. Todas as alterações exigem token CSRF; HT
 
 Use uma hospedagem com PHP e PDO SQLite, disco persistente e permissão de escrita em `data`. Configure a raiz pública para `public/`; nunca exponha a raiz do projeto, pois ela contém o banco e o documento de senhas. Não funciona em hospedagem exclusivamente estática, como GitHub Pages.
 
-O endereço localhost só funciona na máquina que está executando o sistema. Para a entrega pela internet, publique em uma hospedagem PHP e substitua o endereço local no documento pelo URL público real, ou inclua o link do repositório se esse for o formato aceito pelo professor. Nenhuma hospedagem pública está configurada neste projeto.
+O endereço localhost só funciona na máquina que está executando o sistema. A versão pública está no Railway, no endereço indicado acima e no documento de entrega. O código-fonte está no GitHub.
 
 As credenciais acima são de demonstração para avaliação escolar. Cadastros adicionais têm as credenciais escolhidas pelo professor.
 
@@ -50,4 +52,4 @@ As credenciais acima são de demonstração para avaliação escolar. Cadastros 
 
 Execute `python tests/test_system.py` com o PHP disponível. O teste usa um banco temporário e verifica login, sessão única, CSRF, validação de notas, cadastro, duplicidade, escape de HTML, edição, persistência, acesso individual, bloqueio de alterações por alunos, exclusão e logout.
 
-O `Dockerfile` e `railway.json` são opcionais para uma publicação futura. No Railway, configure a porta de destino como `80` e um volume persistente em `/var/www/html/data`, com permissão de escrita para `www-data`. Nenhum deploy foi realizado.
+O `Dockerfile` e `railway.json` configuram a publicação no Railway. A porta de destino é `80`, e o volume persistente está montado em `/var/www/html/data`. O script `docker-entrypoint.sh` prepara as permissões na inicialização. O deploy foi feito pelo CLI; alterações no GitHub não são publicadas automaticamente. Para atualizar o serviço vinculado, execute `railway up`.

@@ -23,7 +23,7 @@ doc.add_paragraph('Atividade de fixação', 'Subtitle')
 doc.add_paragraph('O sistema Nota Clara permite ao professor cadastrar alunos e suas notas finais. Cada aluno possui um acesso individual para consultar somente a própria nota.')
 doc.add_heading('Link do projeto', 1)
 p = doc.add_paragraph()
-url = 'https://github.com/Henri-Dud3/atividade-fixacao-alunos'
+url = 'https://nota-clara-production.up.railway.app'
 link = OxmlElement('w:hyperlink')
 link.set(qn('r:id'), p.part.relate_to(url, RT.HYPERLINK, is_external=True))
 run = OxmlElement('w:r')
@@ -31,7 +31,8 @@ props = OxmlElement('w:rPr')
 color = OxmlElement('w:color'); color.set(qn('w:val'), '176B53'); props.append(color)
 run.append(props)
 text = OxmlElement('w:t'); text.text = url; run.append(text); link.append(run); p._p.append(link)
-doc.add_paragraph('O link contém o código-fonte e as instruções de execução. O sistema é executado localmente; não há aplicação publicada para acesso pela internet.')
+doc.add_paragraph('Acesse o sistema pelo link acima e utilize uma das contas abaixo. O banco de dados fica armazenado em um volume persistente no Railway.')
+doc.add_paragraph('Código-fonte e instruções: https://github.com/Henri-Dud3/atividade-fixacao-alunos')
 doc.add_heading('Usuários e senhas para avaliação', 1)
 table = doc.add_table(rows=1, cols=4)
 table.style = 'Light Shading Accent 1'
