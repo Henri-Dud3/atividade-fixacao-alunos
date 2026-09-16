@@ -36,7 +36,7 @@ Há uma identidade por sessão do navegador, compartilhada entre abas. É precis
 - `app.php`: sessões, permissões, validação e consultas parametrizadas.
 - `database.sql`: estrutura SQL do banco.
 - `data/`: banco persistente, fora da pasta pública.
-- `output/Entrega.docx`: documento com acesso e credenciais.
+- `output/Entrega_Railway.docx`: documento atualizado com acesso online e credenciais.
 
 Senhas são armazenadas como hashes. Todas as alterações exigem token CSRF; HTML é escapado na saída e permissões são verificadas no PHP.
 
